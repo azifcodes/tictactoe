@@ -1,1 +1,9 @@
+body {
+    background-color: #212529;
+    text-align: center;
+    color: #eee;
+}
 
+div{
+    margin-bottom: 5%;
+}
