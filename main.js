@@ -50,8 +50,8 @@ class Board
                     let ib = (y * 100) + 30;
                     let jb = (x * 100) + 30;
                 
-                    let ie = ((y+1)*100)-30;
-                    let je = ((x+1)*100)-30;
+                    let ie = ((y+1)*100) - 30;
+                    let je = ((x+1)*100) - 30;
                     line(ib, jb, ie, je);
                     
                     ib = (y * 100) + 30;
