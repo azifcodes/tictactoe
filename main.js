@@ -50,14 +50,14 @@ class Board
                     let ib = (y * 100) + 30;
                     let jb = (x * 100) + 30;
                 
-                    let ie = ((y+1)*100) - 30;
-                    let je = ((x+1)*100) - 30;
+                    let ie = ((y + 1) * 100) - 30;
+                    let je = ((x + 1) * 100) - 30;
                     line(ib, jb, ie, je);
                     
                     ib = (y * 100) + 30;
-                    jb = ((x+1)*100) - 30;
+                    jb = ((x + 1) * 100) - 30;
                     
-                    ie = ((y+1)*100) - 30;
+                    ie = ((y + 1) * 100) - 30;
                     je = (x * 100) + 30;
                     
                     line(ib, jb, ie, je);
@@ -189,7 +189,7 @@ function setup()
     
     back = createButton("Back");
     back.parent("btn2");
-    back.mousePressed(()=> 
+    back.mousePressed(() => 
     {
         board.board[board.lastPlayed[0]][board.lastPlayed[1]] = 0;
         
@@ -222,7 +222,7 @@ function draw()
     
     text.html("Turn: " + turn);
     
-    if (board.winner != null)
+    if (board.winner != null && board.winner != "tie")
     {
         if (turn == "Player 1")
         {
@@ -233,6 +233,10 @@ function draw()
             turn = "Player 1";
         }
         text.html(turn + " wins!")
+    }
+    else if (board.winner == "tie")
+    {
+        text.html("It's a tie!");
     }
 }
 
