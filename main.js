@@ -172,6 +172,7 @@ class Board
 
 board = new Board();
 let text, newgame, back, turn;
+
 function setup()
 {
     cnv = createCanvas(300, 300);
@@ -203,6 +204,7 @@ function setup()
         }
         
         board.winner = null;
+        board.left++;
     });
 }
 
