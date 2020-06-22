@@ -171,7 +171,7 @@ class Board
 }
 
 board = new Board();
-let text, newgame, back, turn;
+let text, newgame, back, turn, backed;
 
 function setup()
 {
@@ -192,19 +192,24 @@ function setup()
     back.parent("btn2");
     back.mousePressed(() => 
     {
-        board.board[board.lastPlayed[0]][board.lastPlayed[1]] = 0;
-        
-        if (board.turn == "pc")
+        if (board.lastPlayed != backed)
         {
-            board.turn = "human";
-        }
-        else
-        {
-            board.turn = "pc";
-        }
+            backed = board.lastPlayed;
+
+            board.board[board.lastPlayed[0]][board.lastPlayed[1]] = 0;
         
-        board.winner = null;
-        board.left++;
+            if (board.turn == "pc")
+            {
+                board.turn = "human";
+            }
+            else
+            {
+                board.turn = "pc";
+            }
+        
+            board.winner = null;
+            board.left++;
+        }
     });
 }
 
